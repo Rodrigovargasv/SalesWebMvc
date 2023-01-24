@@ -2,7 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using SalesWebMvc.Data;
+using SalesWebMvc.Models;
 using SalesWebMvc.Models.Services;
+using SalesWebMvc.Services;
 using System.Globalization;
 
 // configuração de banco de dados
@@ -15,6 +17,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<SeedingService>();
 builder.Services.AddScoped<SellerService>();
 builder.Services.AddScoped<DepartmentService>();
+builder.Services.AddScoped<SalesRecordService>();
 
 var enUS = new CultureInfo("en-US");
 var localizationOptions = new RequestLocalizationOptions
